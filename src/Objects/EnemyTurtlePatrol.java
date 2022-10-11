@@ -5,7 +5,7 @@
 
 package Objects;
 
-import Animations.FallingDeadSprites;
+import Animations.*;
 import SandBox.Mario;
 import com.golden.gamedev.engine.BaseLoader;
 import com.golden.gamedev.object.*;
@@ -70,6 +70,8 @@ public class EnemyTurtlePatrol extends AnimatedSprite
     
     public void MarioJumpedOnEnemy()
     {
+        game.AnimationGroup.add(new CoinAnim((int)getX(), (int)getY(), game.bsLoader.getStoredImages("CoinAnim"), game));
+        game.player.Jump(-8);
         game.player.Jump(-8);
         game.EnemyGroup.add(new TurtelShell(getX(), getY() + 16D, game, MariotoRight(), Standing, Green));
         if(game.player.HasStar())

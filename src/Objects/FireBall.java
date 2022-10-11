@@ -23,9 +23,9 @@ public class FireBall extends AnimatedSprite
         setLoopAnim(true);
         setAnimationTimer(new Timer(100));
         if(MoveX)
-            XSpeed = 8;
+            XSpeed = 6;
         else
-            XSpeed = -8;
+            XSpeed = -6;
         game = g;
     }
 

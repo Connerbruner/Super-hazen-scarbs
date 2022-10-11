@@ -52,8 +52,11 @@ public class Coin extends AdvanceSprite
     public void MarioJumpedOnEnemy()
     {
         super.setActive(false);
-        game.parent.CoinInc();
+        game.AnimationGroup.add(new CoinAnim((int)getX(), (int)getY(), game.bsLoader.getStoredImages("CoinAnim"), game));
         game.playSound("music/smb_coin.mp3");
+        if(game.parent.getCoin()%20==0 && game.parent.getCoin()>19) {
+            game.player.Grow();
+        }
     }
 
     public void KilledByFireBall()
@@ -96,9 +99,7 @@ public class Coin extends AdvanceSprite
 
     public void EnemyJumperOnMario()
     {
-        super.setActive(false);
-        game.parent.CoinInc();
-        game.playSound("music/smb_coin.mp3");
+        MarioJumpedOnEnemy();
     }
 
     public int Life()
@@ -108,10 +109,7 @@ public class Coin extends AdvanceSprite
 
     public void CollidedWithJumping_Brick()
     {
-        game.AnimationGroup.add(new CoinAnim((int)getX(), (int)getY(), game.bsLoader.getStoredImages("CoinAnim"), game));
-        setActive(false);
-        game.parent.CoinInc();
-        game.playSound("music/smb_coin.mp3");
+        MarioJumpedOnEnemy();
     }
 
     public boolean MariotoRight()

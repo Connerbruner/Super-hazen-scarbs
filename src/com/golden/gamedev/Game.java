@@ -351,9 +351,6 @@ public abstract class Game {
 				// update game
 				this.update(elapsedTime);
 				this.bsInput.update(elapsedTime); // update input
-				
-			
-			
 			do {
 				if (!this.running) {
 					// if not running, quit this game

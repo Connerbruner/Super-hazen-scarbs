@@ -5,7 +5,7 @@
 
 package Objects;
 
-import Animations.FallingDeadSprites;
+import Animations.*;
 import SandBox.Mario;
 import com.golden.gamedev.engine.BaseLoader;
 import com.golden.gamedev.object.*;
@@ -88,7 +88,7 @@ public class Spikey extends AnimatedSprite
     
     public void KilledByFireBall()
     {
-        game.AnimationGroup.add(new FallingDeadSprites(getX(), getY(), getImage(), MariotoRight()));
+        game.AnimationGroup.add(new CoinAnim((int)getX(), (int)getY(), game.bsLoader.getStoredImages("CoinAnim"), game));        game.AnimationGroup.add(new FallingDeadSprites(getX(), getY(), getImage(), MariotoRight()));
         setActive(false);
     }
 

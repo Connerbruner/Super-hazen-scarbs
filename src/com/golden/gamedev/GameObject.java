@@ -118,7 +118,6 @@ public abstract class GameObject {
 		this.bsTimer = this.parent.bsTimer;
 		this.bsMusic = this.parent.bsMusic;
 		this.bsSound = this.parent.bsSound;
-		
 		this.fontManager = this.parent.fontManager;
 	}
 	

@@ -5,7 +5,7 @@
 
 package Objects;
 
-import Animations.FallingDeadSprites;
+import Animations.*;
 import SandBox.Mario;
 import com.golden.gamedev.engine.BaseLoader;
 import com.golden.gamedev.object.*;
@@ -56,7 +56,7 @@ public class FlyingTurtlePatrol extends AnimatedSprite
     
     public void MarioJumpedOnEnemy()
     {
-        game.player.Jump(-8);
+        game.AnimationGroup.add(new CoinAnim((int)getX(), (int)getY(), game.bsLoader.getStoredImages("CoinAnim"), game));        game.player.Jump(-8);
         game.EnemyGroup.add(new EnemyTurtle((int)getX(), (int)getY(), game, Green));
         if(game.player.HasStar())
             game.AnimationGroup.add(new VolatileSprite(game.bsLoader.getStoredImages("Twink"), getX(), getY()));

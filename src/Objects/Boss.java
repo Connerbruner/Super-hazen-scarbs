@@ -5,7 +5,7 @@
 
 package Objects;
 
-import Animations.DirectFalling;
+import Animations.*;
 import ExtendedObjects.Daze;
 import SandBox.Mario;
 import com.golden.gamedev.object.*;
@@ -167,6 +167,7 @@ public class Boss extends AnimatedSprite
         }
         if(Life < 0)
         {
+            game.AnimationGroup.add(new CoinAnim((int)getX(), (int)getY(), game.bsLoader.getStoredImages("CoinAnim"), game));
             game.AnimationGroup.add(new DirectFalling(getImage(), getX(), getY(), -10));
             game.playSound("music/smb_bowserfalls.mp3");
             setActive(false);

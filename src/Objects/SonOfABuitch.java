@@ -5,7 +5,7 @@
 
 package Objects;
 
-import Animations.DirectFalling;
+import Animations.*;
 import SandBox.Mario;
 import com.golden.gamedev.engine.BaseLoader;
 import com.golden.gamedev.object.AnimatedSprite;
@@ -76,7 +76,7 @@ public class SonOfABuitch extends AnimatedSprite
     
     public void MarioJumpedOnEnemy()
     {
-        game.player.Jump(-8);
+        game.AnimationGroup.add(new CoinAnim((int)getX(), (int)getY(), game.bsLoader.getStoredImages("CoinAnim"), game));        game.player.Jump(-8);
         game.AnimationGroup.add(new DirectFalling(getImage(), getX(), getY()));
         setActive(false);
         if(game.player.HasStar())

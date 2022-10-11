@@ -20,6 +20,7 @@ public class EnemyFireBall extends AnimatedSprite
 
     public EnemyFireBall(int x, int y, BufferedImage Enemy_Image[], Mario g)
     {
+
         AntiClockWise = true;
         setLocation(x, y);
         CenterX = x;

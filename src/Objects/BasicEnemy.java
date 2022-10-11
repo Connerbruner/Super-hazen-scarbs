@@ -6,6 +6,7 @@
 package Objects;
 
 
+
 public interface BasicEnemy
 {
 

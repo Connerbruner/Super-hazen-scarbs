@@ -5,7 +5,7 @@
 
 package Objects;
 
-import Animations.DirectFalling;
+import Animations.*;
 import SandBox.Mario;
 import com.golden.gamedev.engine.BaseLoader;
 import com.golden.gamedev.object.*;
@@ -80,6 +80,7 @@ public class FishyGround extends AnimatedSprite
     
     public void MarioJumpedOnEnemy()
     {
+        game.AnimationGroup.add(new CoinAnim((int)getX(), (int)getY(), game.bsLoader.getStoredImages("CoinAnim"), game));
         if(game.player.HasStar())
             game.AnimationGroup.add(new VolatileSprite(game.bsLoader.getStoredImages("Twink"), getX(), getY()));
         game.player.Jump(-8);

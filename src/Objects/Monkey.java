@@ -5,8 +5,7 @@
 
 package Objects;
 
-import Animations.DirectFalling;
-import Animations.FallingDeadSprites;
+import Animations.*;
 import SandBox.Mario;
 import com.golden.gamedev.engine.BaseLoader;
 import com.golden.gamedev.object.*;
@@ -85,7 +84,7 @@ public class Monkey extends AnimatedSprite
     
     public void MarioJumpedOnEnemy()
     {
-        game.player.Jump(-8);
+        game.AnimationGroup.add(new CoinAnim((int)getX(), (int)getY(), game.bsLoader.getStoredImages("CoinAnim"), game));        game.player.Jump(-8);
         game.AnimationGroup.add(new DirectFalling(getImage(), getX(), getY(), MariotoRight()));
         setActive(false);
         if(game.player.HasStar())

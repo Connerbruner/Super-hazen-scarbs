@@ -84,7 +84,7 @@ public class Rocket extends AdvanceSprite
     
     public void MarioJumpedOnEnemy()
     {
-        game.player.Jump(-8);
+        game.AnimationGroup.add(new CoinAnim((int)getX(), (int)getY(), game.bsLoader.getStoredImages("CoinAnim"), game));        game.player.Jump(-8);
         game.AnimationGroup.add(new DirectFalling(getImage(), getX(), getY()));
         setActive(false);
         if(game.player.HasStar())

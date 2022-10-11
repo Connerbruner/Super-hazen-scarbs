@@ -52,7 +52,6 @@ public class Life extends AnimatedSprite
         PositiveX = false;
     }
 
-    
     public int getType()
     {
         return getID();

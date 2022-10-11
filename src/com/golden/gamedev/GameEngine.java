@@ -129,8 +129,8 @@ public abstract class GameEngine extends Game {
             int Coins = 0 , Score = 0 , Time = 0;
     String World  = "1-1";
     
-    public void setCoin(int Coins) {
-       this.Coins = this.Coins +Coins; 
+    public void setCoin(int c) {
+       this.Coins = c;
     }
     
     public void CoinInc() {
@@ -142,7 +142,7 @@ public abstract class GameEngine extends Game {
     }
 
     public void setWorld(String World) {
-        this.World = World ;; 
+        this.World = World ;
     }
 
     public void setTime(int Time) {

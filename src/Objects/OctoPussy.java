@@ -5,7 +5,7 @@
 
 package Objects;
 
-import Animations.DirectFalling;
+import Animations.*;
 import SandBox.Mario;
 import com.golden.gamedev.engine.BaseLoader;
 import com.golden.gamedev.object.AnimatedSprite;
@@ -89,7 +89,7 @@ public class OctoPussy extends AnimatedSprite
     
     public void KilledByFireBall()
     {
-        game.AnimationGroup.add(new DirectFalling(getX(), getY(), getImage()));
+        game.AnimationGroup.add(new CoinAnim((int)getX(), (int)getY(), game.bsLoader.getStoredImages("CoinAnim"), game));        game.AnimationGroup.add(new DirectFalling(getX(), getY(), getImage()));
         setActive(false);
     }
 
